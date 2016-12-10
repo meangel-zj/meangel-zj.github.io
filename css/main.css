@@ -1,0 +1,309 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**********
+ * 页面样式
+ **********/
+
+/* ==========
+   基本默认值
+   ========== */
+
+html{
+    font-size: 62.5%;  /* 设置字号为10px */
+    color: #222;
+}
+
+::selection{
+    background-color: #b3d4fc;
+    text-shadow: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* ==========
+   工具样式
+   ========== */
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+/* 主样式 */
+
+.home {
+    width:100%;
+    /*min-height: 50rem;  使用rem无法让高度响应式，即变成了固定大小*/
+    min-height:600px;
+    background: url('../img/banner.jpg') no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    text-align: center;
+    color: #ffffff;
+}
+
+.home-content {
+    margin: 180px auto 50px;
+}
+
+.home .home-content .home-left img {
+    width: 260px;
+    border-radius: 50%;
+}
+
+.home .home-content .home-right a {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+}
+
+.home .home-content .home-right h1,
+.home .home-content .home-right h2 {
+    margin: 36px auto;
+}
+
+/* 个人简历 */
+
+.about {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.strip{
+    margin: 28px 0;
+}
+
+.about .about-content {
+    margin-top: 28px;
+}
+
+.about .about-content .item .info {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.about .about-content .item li {
+    display: inline-block;
+    margin: 20px;
+    padding: 5px;
+    border: 3px solid #52edc7;
+    border-radius: 50%;
+}
+
+.about .about-content .item li img {
+    border-radius: 50%;
+}
+
+.about .about-content .item + .item {
+    border-left: 1px solid #000000;
+}
+
+@media only screen and (max-width: 767px) {
+    .about .about-content .item + .item {
+        border-left: none;
+    }
+}
+
+/* 照片 */
+
+.photos {
+    background: url(../img/photos-back.jpg) no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: #ffffff;
+}
+
+.photos .photos-content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.photos-back-top img,
+.photos-back-bottom img {
+    width:100%;
+    display: block;
+    margin: 0;
+}
+
+.pro-b img {
+    display: block; /* display和margin去掉图片与其他元素的空隙 */
+    width: 100%;
+    margin: 0;
+}
+
+.project, .contact{
+    background: #52edc7;
+    overflow: hidden;
+    text-align: center;
+    color: #ffffff;
+    padding: 50px 0;
+}
+
+
+.project .project-content .item {
+    margin: 30px 0;
+}
+
+/*--//作品鼠标移动动画效果--*/
+.project .project-content .item a {
+    display: block;
+    background: #F58703;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.project .project-content .item a img {
+    width:100%;
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.5s;
+    -moz-transition: -moz-transform 0.5s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.project .project-content .item a p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-transform: none;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -moz-transition: opacity 0.35s, -moz-transform 0.35s;
+    -webkit-transform: translate3d(0,50px,0);
+    transform: translate3d(0,50px,0);
+    -moz-transform: translate3d(0,50px,0);
+    -o-transform: translate3d(0,50px,0);
+    -ms-transform: translate3d(0,50px,0);
+    padding: 10px 30px;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.project .project-content .item a:hover img {
+    -webkit-transform: translate3d(0,-50px,0);
+    transform: translate3d(0,-50px,0);
+    -moz-transform: translate3d(0,-50px,0);
+    -o-transform: translate3d(0,-50px,0);
+    -ms-transform: translate3d(0,-50px,0);
+}
+.project .project-content .item a:hover p {
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+}
+/*--//作品鼠标移动动画效果--*/
+
+.blog {
+    overflow: hidden;
+    text-align: center;
+    color: #2b2b2b;
+    background: #eeeeee;
+    padding: 50px 0;
+}
+
+.blog .blog-content a {
+    display: block;
+}
+
+.blog .blog-content a img {
+    width: 90%;
+}
+
+.blog .blog-content p {
+    line-height: 2;
+    margin-top: 20px;
+}
+
+.contact {
+    color: #2b2b2b !important;
+}
+
+.contact .contact-content .item {
+    margin-bottom: 30px;
+}
+
+.contact .contact-content .item img {
+    width: 70%;
+}
+
+.footer {
+    height: 70px;
+    background: #eeeeee;
+}
+
+footer {
+    text-align: center;
+    background: #888b90;
+    height: 60px;
+    font-size: 18px;
+    line-height: 70px;
+    overflow: hidden;
+}
